@@ -1,2 +1,3 @@
 # yukaimages
-Images Folder for Yuka Fukuoka
+たとえば、アカウントは tentokun、そしてページ名は、open なら、こんな感じです。
+https://tentokun.github.io/open/
