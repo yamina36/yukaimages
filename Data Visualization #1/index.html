@@ -1,0 +1,110 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {
+        'packages':['geomap'],
+        'mapsApiKey': 'AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY'
+      });
+      google.charts.setOnLoadCallback(drawMap);
+
+      function drawMap() {
+        var data = google.visualization.arrayToDataTable([
+          ['Country', 'Value'],
+          ['United States', 96.70256805],
+          ['Algeria', 3.59595],
+          ['Anguilla', 32.1083],
+          ['Antigua and Barbuda', 11.0587],
+          ['Argentina', 8.24],
+          ['Armenia', 100],
+          ['Australia', 100],
+          ['Austria', 93.2848],
+          ['Azerbaijan', 100],
+          ['Anguilla', 32.1083],
+          ['Bangladesh', 18.5484],
+          ['Belgium', 100],
+          ['Bermuda', 33.4118],
+          ['Bolivia', 2.10083],
+          ['Brazil', 100],
+          ['Bulgaria', 100],
+          ['Burkina Faso', 0.06236],
+          ['Cabo Verde', 30.3],
+          ['Cambodia', 0.67617],
+          ['Cameroon', 0.06357],
+          ['Canada', 67.2491],
+          ['Chile', 100],
+          ['Colombia', 6],
+          ['Cyprus', 26.4708],
+          ['Czechia', 100],
+          ['Denmark', 100],
+          ['Ecuador', 34.5],
+          ['Estonia', 100],
+          ['Finland', 100],
+          ['France', 100],
+          ['Georgia', 100],
+          ['Germany', 73.6487],
+          ['Guatemala', 2.33623],
+          ['Honduras', 15.3897],
+          ['Hungary', 100],
+          ['Iceland', 100],
+          ['India', 5.44279],
+          ['Ireland', 100],
+          ['Israel', 90.3613],
+          ['Italy', 100],
+          ['Jamaica', 8.98017],
+          ['Japan', 55.6672],
+          ['Kazakhstan', 100],
+          ['Kenya', 16.1],
+          ['Kyrgyzstan', 75.936],
+          ['Latvia', 100],
+          ['Lithuania', 100],
+          ['Luxembourg', 100],
+          ['Mali', 0.60357],
+          ['Malta', 59.7607],
+          ['Mongolia', 100],
+          ['Mozambique', 0.159],
+          ['Myanmar', 0.37095],
+          ['Netherlands', 100],
+          ['New Zealand', 80.2837],
+          ['Nigeria', 0.12],
+          ['Norway', 100],
+          ['Paraguay', 21.6444],
+          ['Peru', 3.94977],
+          ['Philippines', 3.10399],
+          ['Poland', 100],
+          ['Portugal', 89.2461],
+          ['Qatar', 6.4627],
+          ['Republic of Korea', 5.79643],
+          ['Romania', 100],
+          ['Russia', 100],
+          ['Slovakia', 100],
+          ['Slovenia', 100],
+          ['South Africa', 64.2635],
+          ['Spain', 83.4808],
+          ['Sri Lanka', 20.8078],
+          ['Sweden', 100],
+          ['Switzerland', 100],
+          ['Thailand', 35.7201],
+          ['Timor-Leste', 21.2933],
+          ['Tunisia', 5.14303],
+          ['United Kingdom', 100],
+          ['United States of America', 100],
+          ['Uruguay', 94.5],
+          ['Venezuela', 28.28],
+          ['Viet Nam', 9.74997],
+        ]);
+
+        var options = {};
+        options['dataMode'] = 'regions';
+
+        var container = document.getElementById('regions_div');
+        var geomap = new google.visualization.GeoMap(container);
+
+        geomap.draw(data, options);
+      };
+    </script>
+  </head>
+  <body>
+    <div id="regions_div" style="width: 900px; height: 500px;"></div>
+  </body>
+</html>
