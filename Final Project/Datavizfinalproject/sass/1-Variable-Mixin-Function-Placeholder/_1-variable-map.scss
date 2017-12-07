@@ -1,0 +1,125 @@
+
+
+// Start code here 
+
+
+
+// --- Font --- 
+
+
+// -- Base Font -- 
+
+
+$base__font-size: 16px;
+$base__line-height: 24px;
+
+
+// -- Font Family --
+
+
+// For serif 'Lora'
+
+$font-family--primary: 'Lora',-apple-system,system-ui,BlinkMacSystemFont,'Segoe UI','Roboto','Helvetica Neue', Arial, sans-serif;
+$font-family--secondary: 'Montserrat',-apple-system,system-ui,BlinkMacSystemFont,'Segoe UI','Roboto','Helvetica Neue', Arial, sans-serif;
+$font-family--tertiary: // Safari for OS X and iOS (San Francisco)
+                        -apple-system,
+                        // Chrome >= 56 for OS X (San Francisco), Windows, Linux and Android
+                        system-ui,
+                        // Chrome < 56 for OS X (San Francisco)
+                        BlinkMacSystemFont,
+                        // Windows
+                        'Segoe UI',
+                        // Android
+                        'Roboto',
+                        // Basic web fallback
+                        'Helvetica Neue', Arial, sans-serif; // In case, second family becomes another typeface (for dual typeface web page)
+$font-family--print: Georgia,Cambria,'Times New Roman',Times,serif; 
+
+
+// -- Font Weights --
+
+
+$font-weight--thin: 200;
+$font-weight--light: 300;
+$font-weight--regular: 400;
+$font-weight--medium: 500;
+$font-weight--semi-bold: 600;
+$font-weight--bold: 700;
+$font-weight--black: 900;
+
+
+
+// --- Colors --- 
+
+
+// -- Black and White --
+
+
+$white: #fff;
+$black: #000;
+$grey: #ddd;
+
+
+// -- Colorful -- 
+
+$writer: #89ccd4;
+$writer-2: #375154;
+$pastel-green: #6fe586;
+$veggie: #ffad33;
+
+
+// -- Color Usage -- 
+
+$first: $writer;
+$second: $writer-2;
+$third: $pastel-green;
+$color-shadow: rgba($black, .08);
+
+
+
+// --- Color Maps --- 
+
+
+// -- Simple Color Map Palette --
+
+/*$ui-colors: ( 
+  default: $aqua,
+  success: $spring-green,
+  error: $gold,
+  warning: $magenta,
+  info: $blue ); */
+
+
+// -- All Color Palettes -- 
+
+$palettes: (
+  whites: (
+    base: $white
+  ),
+  greys: (
+    base: $grey
+  ),
+  blacks: (
+    x-light: change_color($black, $saturation: 3%, $lightness: 50%),
+    base: $black
+  ),
+  first: (
+    base: $first
+  ),
+  second: (
+    base: $second
+  ),
+  third: (
+    base: $third
+  ),
+  veggie: (
+    base: $veggie
+  )
+);
+
+
+
+// --- Transitions --- 
+
+$tr: cubic-bezier(0, 0, 0.2, 1);
+$iv: 2s;

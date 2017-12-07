@@ -1,0 +1,12 @@
+
+
+// Start code here 
+
+
+
+.footer {
+  &:after {
+    background: rgba(0,0,0,.2);
+
+    @include min-1200 {
+      background: rgba(0,0,0,.2); }}}

@@ -1,0 +1,297 @@
+
+
+// Start code here 
+
+
+
+// --- Header ---
+
+.header {
+	position: fixed;
+	z-index: 400;
+	width: 100%;
+	background: transparent;
+	top: 0;
+	right: 0;
+	height: 60px;
+	font-weight: 600;
+	line-height: 50px;
+	transition: background .3s, box-shadow .3s;
+	animation: fadeIn .7s;	
+
+	@include min-1200 {
+		box-shadow: none;
+		height: auto;
+		padding-top: 20px;
+		padding-bottom: 20px;
+		transition: background .5s, box-shadow .3s, padding-top .3s, padding-bottom .3s; }}
+
+.offpage-active .header {
+	background: rgba(255,255,255,.9);
+	padding-top: 10px;
+	padding-bottom: 10px;
+	transition: background .3s, box-shadow .3s;
+
+	&.headroom--not-top {
+		box-shadow: -2px 2px 81px -27px rgba(0, 0, 0, 0.45); }
+	
+	@include min-1200 {
+		transition: background .5s, box-shadow .3s, padding-top .3s, padding-bottom .3s; }}	
+
+
+// --- Logo ---
+
+.logo {
+	display: inline-block;
+	line-height: 0;
+	left: 50%;
+	margin-top: 10px;
+	transform: translateX(-50%);
+	transform-origin: 50% 50%;
+	z-index: 450;
+	cursor: pointer;
+	user-select: none;
+	transition: opacity .3s, transform .3s;
+
+	@include min-1200 {
+		left: 115px;
+		margin-top: 0;
+		width: 50px;
+		height: 50px;
+		transform: translateX(0);
+		transition: opacity .5s, transform .5s, transform-origin .5s; 
+
+		&:hover {
+			opacity: .5; }}}
+
+.loaded .logo-r {
+	fill: #fff; }
+
+.loaded .logo-m {
+	fill: $first; }
+
+.logo-r, .logo-m {
+	transition: fill .3s; 
+
+	@include min-1200 {
+		transition: fill .5s; }}
+
+.offpage-active .logo-r {
+	fill: $first; }
+
+.offpage-active .logo-m {
+	fill: #fff; }
+
+.offpage-active {
+	& .logo {
+		margin-top: 0; }
+
+	@include min-1200 {
+		& .logo {
+			transform: scale(.8) translateX(0);
+			transform-origin: 0 0; }}}
+
+
+// --- Menu ---
+
+.menu {
+	line-height: 40px;
+	transform: translateX(-8px) translateY(0);
+	transition: transform .3s; }
+
+.menu__item {
+	display: inline-block;
+	color: #000;
+	transition: color .3s;
+	cursor: pointer;
+	position: relative;
+
+	@include min-1200 {
+		transition: color .5s; }
+
+	&:last-child {
+		margin-right: 115px; }}
+	
+.menu__item-link {
+	display: inline-block;
+	height: 100%;
+	line-height: 40px;
+	font-size: em(13px);
+	text-transform: uppercase;
+	font-weight: $font-weight--semi-bold;
+	color: inherit;
+	letter-spacing: .4px;
+	transition: opacity .3s;
+	padding: 0 15px;
+
+	&:hover {
+		opacity: .5; }
+
+	@include min-1200 {
+		transition: opacity .3s; }}
+
+.loaded .menu__item {
+	color: #fff; }
+
+.offpage-active .menu__item {
+	color: #000; }
+
+.menu__item-button {
+	display: inline-block;
+	height: 38px;
+	margin-right: 25px;
+
+	&:last-child {
+		margin-right: 100px; }}
+
+.headroom--not-top .menu__item {
+	color: #000; }
+
+
+// -- Submenu (desktop) --
+
+.submenu {
+	display: none;
+  background: #fff;
+  padding: 40px 0 40px 50px;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  min-width: 260px;
+  z-index: 1000;
+  box-shadow: -2px 2px 81px -27px rgba(0, 0, 0, 0.29);
+  line-height: 23px;
+  animation-duration: .3s;
+  animation-fill-mode: both;
+  animation-name: fadeIn;
+  cursor: default; }
+
+.has-menu {
+	&:hover {
+		& .submenu {
+			display: block; }}
+	& > a:after {
+    content: '\221F';
+    transform: rotate(-45deg);
+    display: inline-block;
+    margin-left: 12px;
+    font-size: 13px;
+    position: relative;
+    top: -2px; }}
+
+.submenu-menu {
+	width: 220px; }
+
+.submenu-menu__item {
+	margin-bottom: 12px;
+
+	&:last-child {
+		margin-bottom: 0; }}
+
+.submenu-menu__item-link {
+  color: #000;
+  font-size: .875em;
+  font-weight: 400;
+  display: inline-block;
+  line-height: 1;
+  padding: 7px 0;
+  text-transform: capitalize;
+  position: relative;
+
+	&:after {
+		display: none;
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    width: 100%;
+    height: 2px;
+    background: $first;
+    left: 0;
+    animation-duration: .3s;
+	  animation-fill-mode: both;
+	  animation-name: fadeIn; }
+
+	&:hover:after {
+		display: block; }}
+
+
+
+// --- Menu mobile ---
+
+.menu-mob {
+	display: none; 
+	top: 60px;
+	left: 0;
+	z-index: 500;
+	width: 100%; 
+	background: #fff;
+	box-shadow: 0 1px 0 rgba(0,0,0,.08); }
+
+.menu-mob__item {
+	display: block;
+	position: relative;
+	width: 100%; 
+	
+	& a {
+		display: block;
+		position: relative;
+		width: 100%;
+		height: 50px;
+		text-align: center;
+		line-height: 50px;
+		font-size: em(12px);
+		text-transform: uppercase;
+		font-weight: $font-weight--semi-bold;
+		letter-spacing: .4px;
+		color: #333;
+		padding: 0 50px; }}
+
+.menu-mob__item-button {
+	& a {
+		background: $first;
+		color: #fff; }}
+
+
+// -- Submenu (mobile) --
+
+.submenu--m {
+	display: none;
+	width: 100%;
+	background: rgba($first, .08); }
+
+.has-menu--m {
+	& > a:after {
+    content: '\221F';
+    transform: rotate(-45deg);
+    display: inline-block;
+    margin-left: 12px;
+    font-size: 13px;
+    position: relative;
+    top: -2px; }}
+
+
+
+// --- Headroom ---
+
+.headroom--not-top {
+	background: rgba(255,255,255,.9);
+	box-shadow: -2px 2px 81px -27px rgba(0, 0, 0, 0.45);	
+
+	@include min-1200 {
+		background: rgba(255,255,255,.9);
+		padding-top: 10px;
+		padding-bottom: 10px; }
+
+	& .logo {
+		@include min-1200 {
+			transform: scale(.8) translateX(0);
+			transform-origin: 0 0; }}
+
+	& .logo-r {
+		fill: $first; }
+
+	& .logo-m {
+		fill: #fff; }
+
+	& .menu {
+		transform: translateX(0); }}

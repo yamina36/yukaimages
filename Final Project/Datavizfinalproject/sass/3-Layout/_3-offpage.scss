@@ -1,0 +1,133 @@
+
+
+// Start code here
+
+
+
+// --- Offpage ---
+
+.offpage {
+  display: none;
+  position: relative;
+  background: #fff;
+  width: 100%;
+  min-height: 100vh;
+  height: auto;
+  z-index: 300;
+
+  @media only screen and (min-width: 1200px) {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    height: 100%;
+    width: 100%;
+    box-shadow: -1px 0 0 rgba(0,0,0,.08);
+    transition: transform 1.5s ease; }}
+
+.offpage-active .offpage {
+  @include min-1200 {
+    transform: translateY(-100%);
+    transition: transform .5s $tr; }}
+  
+.offpage__content {
+  display: block;
+  position: relative;
+  width: 100%;
+  min-height: 100%;
+  height: auto;
+  z-index: 1;
+  padding-top: 60px;
+  background: #fff;
+  opacity: .2;
+  transition: opacity .7s; }
+
+.page-box {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: auto;
+  background: #fff;
+  animation: fadeIn .7s; }
+  
+.close {
+  color: #fff;
+  background: rgba(0,0,0,.8);
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, -25px);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  line-height: 50px; 
+  z-index: 2;
+
+  &:after {
+    content: '\00D7';
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    font-size: 2.4em;
+    font-weight: 300;
+    line-height: 50px;
+    font-weight: $font-weight--regular; }}
+
+
+
+// --- Content ---
+
+.o-hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 80vh;
+  position: relative;
+  color: #fff;
+
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    z-index: 0; 
+
+    @include min-1200 {
+      background: rgba(0, 0, 0, 0.2); }}
+
+  @media only screen and (min-width: 320px) and (orientation: landscape) {
+    height: 85vh; }
+
+  @media only screen and (min-width: 640px) and (orientation: landscape) {
+    height: 75vh; }
+
+  @media only screen and (min-width: 768px) and (orientation: landscape) {
+    height: 60vh; }
+
+  @include min-1200 {
+    margin-top: 0; }}
+
+.o-hero.v2 {
+  &:after {
+    display: none; }}
+
+.o-hero__title, .o-hero__lead {
+  padding: 0 25px;
+  text-align: center;
+  position: relative;
+  z-index: 1; }
+
+
+// -- Google map --
+
+.gmap {
+  background: #ccc;
+  width: 100%;
+  height: 36vh; }

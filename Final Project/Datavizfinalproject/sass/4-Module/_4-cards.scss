@@ -1,0 +1,192 @@
+
+
+// Start code here 
+
+
+
+// --- Accordion ---
+
+.accordion {
+	display: block;
+	position: relative;
+	width: 100%; }
+
+.accordion__item {
+	display: block;
+	width: 100%;
+	margin-bottom: 25px;
+	
+	&:last-child {
+		margin-bottom: 0; }}
+
+.accordion__title {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	position: relative;
+	padding: 20px;
+	font-size: 1em;
+	line-height: 1.2;
+	font-weight: $font-weight--semi-bold;
+	color: #333;
+	border-bottom: 1px solid #eee;
+	overflow: hidden;
+
+	@include min-1200 {
+		padding: 20px 40px; }}
+
+.accordion__content {
+	display: none;
+	position: relative;
+	overflow: hidden;
+	padding: 25px;
+	background-color: #fff;
+
+	@include min-768 {
+		padding: 40px; }
+
+	@include min-1200 {
+		padding: 50px; }}
+
+
+// -- Accordion cards, v2 -- 
+
+.v2.accordion {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	position: relative;
+	width: 100%; }
+
+.v2 .accordion__item {
+	display: inline-block;
+	width: 260px;
+	margin: 20px; 
+
+	@include min-480 {
+		margin: 25px; }}
+
+.v2 .accordion__title {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	padding: 20px;
+	color: #fff;
+	border-bottom: none;
+	overflow: hidden;
+	height: 260px;
+	width: 100%;
+	background-color: $first; 
+
+	@include min-1200 {
+		padding: 40px; }
+
+	& p {
+    position: absolute;
+    bottom: 40px;
+    left: 0;
+    font-size: em(16px);
+    text-align: center;
+    width: 100%;
+    font-weight: $font-weight--semi-bold; }
+
+ 	& svg {
+		margin-bottom: 40px; }
+
+	& path {
+		fill: #fff; }}
+
+.v2 .accordion__content {
+	display: none;
+	position: relative;
+	overflow: hidden;
+	padding: 25px;
+	background-color: #fff;
+	border: 1px solid #e4e4e4;
+	border-top: none;
+
+
+	@include min-768 {
+		padding: 30px; }
+
+	@include min-1200 {
+		padding: 40px; }}
+
+
+// -- Accordion cards, v3 -- 
+
+.v3 .accordion__item {
+  margin-bottom: 45px;
+  background: #fff; }
+
+.v3 .accordion__title {
+  padding: 40px 50px;
+  border-bottom: none;
+  box-shadow: 0px 11px 35px rgba(0,0,0,.12); }
+
+
+// -- Offpage accordion -- 
+
+.o-accordion__content {
+	@extend .accordion__content;
+	display: inline-block; }
+
+
+
+// --- Simple cards ---
+
+.simple-cards {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	flex-wrap: wrap;
+	width: 100%; }
+
+.simple-card {
+  margin: 0 20px;
+  margin-bottom: 40px;
+  border: 3px solid $first;
+
+	&:last-child {
+		margin-bottom: 0; }
+
+	@include min-1024 {
+		margin-bottom: 0; }
+
+	@include min-1200 {
+		transition: transform .5s $tr;
+
+		&:hover {
+			transform: translateY(-7px); }}}
+
+.simple-card a {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: left;
+  width: 240px;
+  min-height: 160px;
+  background: #fff;  
+  padding: 30px;
+  color: #111; }
+
+
+// v2 (simple white card)
+
+.v2 .simple-card {
+  width: 190px;
+  height: 160px;
+  background: #fff;
+  box-shadow: none;
+  padding: 30px;
+  border: none;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: default; }

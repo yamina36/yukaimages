@@ -1,0 +1,152 @@
+
+
+// Start code here
+
+
+
+// --- Homepage ---
+
+.main {
+  position: relative;
+  width: 100%;
+  min-height: 100%;
+  height: auto;
+  background: #fff;
+  animation: fadeIn .5s; 
+
+  @include min-1200 {
+    animation: none;
+    transform: scale(1);
+    transition: transform .5s $tr; }}
+
+.offpage-active .main {
+  display: none;
+  opacity: 0;
+
+  @include min-1200 {
+    display: block;
+    opacity: 1;
+    position: fixed;
+    transform: scale(.95); }}
+
+.homepage-load {
+  position: relative;
+  z-index: 100;
+  opacity: .2;
+  transition: opacity .7s;
+
+  @include min-1200 {
+    transform-origin: 50% 40%; }}
+
+
+
+// --- Content ---
+
+
+// -- Image layouts --
+
+.img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 0 60px 0;
+
+  &:last-child {
+    padding-bottom: 0; }
+
+  @include min-768 {
+    display: inline-block;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 0 20px;
+    max-width: 50%; }
+
+  @include min-1024 {
+    padding: 0 40px; 
+
+    &:last-child {
+      padding-left: 20px; }}}
+
+.img-2-i {
+  @include min-768 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center; }}
+
+
+
+// --- Paragraph layouts ---
+
+
+// -- Paragraph 2 --
+
+.p-2__item {
+  margin-bottom: 50px;
+
+  @include min-768 {
+    padding-right: 50px;
+
+    &:last-child {
+      padding-right: 0; }}}
+
+.p-2__title {
+  font-weight: $font-weight--semi-bold;
+  margin-bottom: 35px; }
+
+.p-2__desc {
+  max-width: 375px; }
+
+.p-2-a2__desc {
+  max-width: 540px;
+
+  &.first {
+    margin-top: 30px; }
+
+    @include min-768 {
+      margin-top: 30px; }}
+
+
+// -- Paragraph 3 --
+
+.p-3__item {
+  margin-bottom: 50px;
+
+  @include min-768 {
+    padding-right: 50px;
+
+    &:last-child {
+      padding-right: 0; }}}
+
+.p-3__title {
+  font-weight: $font-weight--semi-bold;
+  margin-bottom: 10px; }
+
+.p-3__desc {
+  max-width: 375px; }
+
+
+
+// Sections 
+
+
+// Section background
+
+.s-bg-i, .s-bg-t {
+  min-height: 60vh;
+  width: 100%;
+  position: relative; }
+
+.s-bg-t {
+  &:after {
+    content:'';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.2); 
+
+    @include min-1200 {
+      background: rgba(0,0,0,.2); }}}
